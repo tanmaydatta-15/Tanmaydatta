@@ -36,7 +36,7 @@ export const getMimeType = (file: File): string => {
 // Gemini Service
 let ai: GoogleGenAI;
 try {
-  ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+  ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY as string });
 } catch (error) {
   console.error("Failed to initialize GoogleGenAI:", error);
 }
