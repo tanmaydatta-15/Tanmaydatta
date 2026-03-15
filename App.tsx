@@ -566,6 +566,26 @@ const App: React.FC = () => {
             <div className="flex-1 overflow-y-auto p-6 space-y-8 no-scrollbar">
               {settingsTab === 'general' && (
                 <div className="space-y-6">
+                  <div className="space-y-2">
+                    <label htmlFor="apiKey" className="text-sm font-medium text-gray-700 dark:text-gray-300 px-2">
+                      Gemini API Key
+                    </label>
+                    <div className="flex gap-2">
+                      <input
+                        id="apiKey"
+                        type="password"
+                        value={settings.apiKey || ''}
+                        onChange={(e) =>
+                          setAppState((p) => ({
+                            ...p,
+                            settings: { ...p.settings, apiKey: e.target.value },
+                          }))
+                        }
+                        className="flex-1 px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-2xl text-sm border-transparent focus:ring-2 ring-blue-500/20"
+                        placeholder="Enter your API key"
+                      />
+                    </div>
+                  </div>
                   <div className="flex justify-between items-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border dark:border-gray-800">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-lg"><Icons.Brain /></div>
